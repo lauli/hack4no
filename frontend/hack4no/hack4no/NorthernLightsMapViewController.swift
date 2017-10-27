@@ -12,11 +12,16 @@ import MapKit
 class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var lights: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
         self.addOverlay()
+        self.lights.image = #imageLiteral(resourceName: "test")
+        self.lights.alpha = 0.2
+        self.lights.isUserInteractionEnabled = false
+        
         // Do any additional setup after loading the view.
     }
 
@@ -26,14 +31,19 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func addOverlay() {
-        /*
-        let coords1 = CLLocationCoordinate2D(latitude: 70.067581,                   longitude: 19.249916)
-        let coords2 = CLLocationCoordinate2D(latitude: coords1.latitude,            longitude: coords1.longitude+0.004)
-        let coords3 = CLLocationCoordinate2D(latitude: coords1.latitude+0.004,   longitude: coords1.longitude+0.004)
-        let coords4 = CLLocationCoordinate2D(latitude: coords1.latitude+0.004,   longitude: coords1.longitude)
-        let testcoords:[CLLocationCoordinate2D] = [coords1, coords2, coords3, coords4]
-        */
-        //let poly = MKPolygon(coordinates: testcoords, count: testcoords.count)
+        let center = self.mapView.region.center
+        let latitude = self.mapView.region.span.latitudeDelta / 2
+        let longitude = self.mapView.region.span.longitudeDelta / 2
+        
+        let leftupPoint = CLLocationCoordinate2D(latitude: center.latitude + latitude, longitude: center.longitude - longitude)
+        let rightdownPoint = CLLocationCoordinate2D(latitude: center.latitude - latitude, longitude: center.longitude + longitude)
+        
+        let anno = MKPointAnnotation()
+        anno.coordinate = leftupPoint
+        let anno2 = MKPointAnnotation()
+        anno2.coordinate = rightdownPoint
+        self.mapView.addAnnotations([anno, anno2])
+        
         let circle = MKCircle(center: CLLocationCoordinate2D(latitude: 70.067581, longitude: 19.249916), radius: 1000)
         self.mapView.add(circle)
     }
@@ -47,29 +57,15 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate {
         overlay.alpha = 0.2
         return overlay
     }
- 
-    /*
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        guard let poly = overlay as? MKMapPoint else {return MKOverlayRenderer()}
-        
-        let circleRenderer = MKMapPoint
-        circleRenderer.colo
-        circleRenderer.strokeColor = UIColor.green
-        circleRenderer.fillColor = UIColor.green
-        circleRenderer.alpha = 0.2
-        return circleRenderer
-    }
- */
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // mapView(:viewForAnnotation:) is the method that gets called for every annotation you add to the map (kind of like tableView(:cellForRowAtIndexPath:) when working with table views), to return the view for each annotation.
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        var view: MKAnnotationView
+        view = MKAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        view.image = #imageLiteral(resourceName: "test")
+            return view
     }
-    */
+ 
 
 }

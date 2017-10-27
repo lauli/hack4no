@@ -153,10 +153,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="jtq-rR-JBt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="F8B-ck-CBH"/>
                     </view>
                     <connections>
+                        <outlet property="lights" destination="jtq-rR-JBt" id="172-Gt-UKk"/>
                         <outlet property="mapView" destination="sgt-u7-hfc" id="pfg-oM-7qC"/>
                     </connections>
                 </viewController>
@@ -164,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="3173.5999999999999" y="-1293.5532233883059"/>
         </scene>
-        <!--View Controller-->
+        <!--Magnetfield Statstics View Controller-->
         <scene sceneID="rbx-5e-o4G">
             <objects>
-                <viewController id="YzQ-tf-4h9" sceneMemberID="viewController">
+                <viewController id="YzQ-tf-4h9" customClass="MagnetfieldStatsticsViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nbe-eJ-3uh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,4 +189,7 @@
             <point key="canvasLocation" x="3174" y="-721"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="test" width="50" height="100"/>
+    </resources>
 </document>

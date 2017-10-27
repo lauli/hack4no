@@ -8,6 +8,8 @@ target 'hack4no' do
   	pod 'SwiftyJSON'
 	pod 'Alamofire'
 	pod 'AlamofireNetworkActivityIndicator'
+	pod 'Charts', '3.0.4'
+	pod 'SwiftCharts', :git => 'https://github.com/i-schuetz/SwiftCharts.git'
 
   target 'hack4noTests' do
     inherit! :search_paths
