@@ -24,7 +24,7 @@ public class DataRequesterTest {
 		for (int i = 0; i < 100000; i++){
 			int lat = rnd.nextInt(180)-90;
 			int lon = rnd.nextInt(360);
-			int strength = req.getAuroraChance(lat, lon);
+			float strength = req.getAuroraChance(lat, lon);
 			if (strength > 20)
 				System.out.println(lat+":"+lon+": "+ strength);
 		}

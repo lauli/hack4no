@@ -61,7 +61,7 @@ public class DataRequester {
 		return data;
 	}
 
-	public int getAuroraChance(float lat, float lon) {
+	public float getAuroraChance(float lat, float lon) {
 		try {
 			if (lastUpdate < System.currentTimeMillis() - 5 * 60 * 1000){ //5 min 
 				auroraMap = getFreshAuroraData();
@@ -84,7 +84,7 @@ public class DataRequester {
 //		System.out.println(latIndex + ":" + lonIndex);
 
 		// TODO: interpolate
-		return auroraMap[latIndex][lonIndex];
+		return auroraMap[latIndex][lonIndex]/100f;
 
 	}
 
@@ -100,8 +100,12 @@ public class DataRequester {
 	 *            e.g. "10.21"
 	 * @return
 	 */
-	public Weatherdata getWeatherData(String lat, String lon) {
-		String url = "http://api.met.no/weatherapi/locationforecast/1.9/?lat=" + lat + ";lon=" + lon + ";";
+	public Weatherdata getWeatherData(float lat, float lon) {
+		String latStr = String.format("%.2f", lat);
+		String lonStr = String.format("%.2f", lon);
+		
+		String url = "http://api.met.no/weatherapi/locationforecast/1.9/?lat=" 
+				+ latStr + ";lon=" + lonStr + ";";
 		System.out.println("requsting: " + url.toString());
 		InputStream stream = getStreamFromUrl(url);
 		Weatherdata data = weatherXmlParser.unmarshall(stream);
@@ -116,9 +120,9 @@ public class DataRequester {
 	 * @param lon
 	 *            dot separated floating point number with two decimal numbers
 	 *            e.g. "10.21"
-	 * @return cloud opacity between 0 and 400.
+	 * @return cloud opacity between 0 and 1.
 	 */
-	public float getCurrentCloudOpacity(String lat, String lon) {
+	public float getCurrentCloudOpacity(float lat, float lon) {
 		Weatherdata wData = getWeatherData(lat, lon);
 
 		// get current time
@@ -148,7 +152,8 @@ public class DataRequester {
 						Cloudiness cloud = (Cloudiness) x.getValue();
 						// System.out.println(cloud.getId()+"
 						// "+cloud.getPercent());
-						cloudiness += Float.parseFloat(cloud.getPercent());
+						cloudiness = Math.max(cloudiness,
+								Float.parseFloat(cloud.getPercent()));
 						break;
 					default:
 						; // do nothing
@@ -157,7 +162,7 @@ public class DataRequester {
 			}
 		}
 
-		return cloudiness;
+		return cloudiness/100;
 	}
 
 }
