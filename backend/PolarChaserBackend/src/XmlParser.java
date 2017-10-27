@@ -36,6 +36,7 @@ public class XmlParser<T> {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public T unmarshall( InputStream xmlString){
 		T root = null;
 		try {
