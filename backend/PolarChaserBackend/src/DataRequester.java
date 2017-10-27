@@ -1,17 +1,12 @@
-import java.io.*;
-import java.net.*;
-import java.time.Instant;
-import java.time.LocalDateTime;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
-import java.util.Date;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlList;
-import javax.xml.datatype.XMLGregorianCalendar;
-
-import org.omg.CosNaming.IstringHelper;
 
 import WeatherapiGenXml.Cloudiness;
 import WeatherapiGenXml.TimeType;
@@ -65,7 +60,6 @@ public class DataRequester {
 	 * @param lon dot separated floating point number with two decimal numbers e.g. "10.21"
 	 * @return cloud opacity between 0 and 400.
 	 */
-	@SuppressWarnings("deprecation")
 	public float getCurrentCloudOpacity(String lat, String lon){
 		Weatherdata wData = getWeatherData(lat, lon);
 		

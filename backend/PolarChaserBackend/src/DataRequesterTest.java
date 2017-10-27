@@ -1,4 +1,4 @@
-import WeatherapiGenXml.Weatherdata;
+
 
 public class DataRequesterTest {
 	public static void main(String[] args) {
