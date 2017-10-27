@@ -11,12 +11,14 @@
 		33E530B7F3DD3ED84878BF61 /* Pods_hack4no.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8D681976A854E2DA76ACBD /* Pods_hack4no.framework */; };
 		50707129A3C25517008EA58C /* Pods_hack4noUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813599743E7D22D8EC8DA0FA /* Pods_hack4noUITests.framework */; };
 		C8A3A7161FA368C60099520E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3A7151FA368C60099520E /* AppDelegate.swift */; };
-		C8A3A7181FA368C60099520E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3A7171FA368C60099520E /* ViewController.swift */; };
 		C8A3A71B1FA368C60099520E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3A7191FA368C60099520E /* Main.storyboard */; };
 		C8A3A71D1FA368C60099520E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A3A71C1FA368C60099520E /* Assets.xcassets */; };
 		C8A3A7201FA368C60099520E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3A71E1FA368C60099520E /* LaunchScreen.storyboard */; };
 		C8A3A72B1FA368C60099520E /* hack4noTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3A72A1FA368C60099520E /* hack4noTests.swift */; };
 		C8A3A7361FA368C60099520E /* hack4noUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3A7351FA368C60099520E /* hack4noUITests.swift */; };
+		C8B34CC21FA36B74009B0822 /* RouteMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC11FA36B74009B0822 /* RouteMapViewController.swift */; };
+		C8B34CC41FA36B8D009B0822 /* NorthernLightsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC31FA36B8D009B0822 /* NorthernLightsMapViewController.swift */; };
+		C8B34CC61FA3B0CE009B0822 /* MapNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC51FA3B0CE009B0822 /* MapNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,6 @@
 		813599743E7D22D8EC8DA0FA /* Pods_hack4noUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hack4noUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A3A7121FA368C60099520E /* hack4no.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hack4no.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A3A7151FA368C60099520E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8A3A7171FA368C60099520E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8A3A71A1FA368C60099520E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8A3A71C1FA368C60099520E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8A3A71F1FA368C60099520E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +56,9 @@
 		C8A3A7311FA368C60099520E /* hack4noUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hack4noUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A3A7351FA368C60099520E /* hack4noUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hack4noUITests.swift; sourceTree = "<group>"; };
 		C8A3A7371FA368C60099520E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8B34CC11FA36B74009B0822 /* RouteMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapViewController.swift; sourceTree = "<group>"; };
+		C8B34CC31FA36B8D009B0822 /* NorthernLightsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorthernLightsMapViewController.swift; sourceTree = "<group>"; };
+		C8B34CC51FA3B0CE009B0822 /* MapNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationController.swift; sourceTree = "<group>"; };
 		CB3AB038A679094B3D868576 /* Pods-hack4noUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4noUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack4noUITests/Pods-hack4noUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4DF2C80C729012B8D3C8A48 /* Pods-hack4no.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4no.release.xcconfig"; path = "Pods/Target Support Files/Pods-hack4no/Pods-hack4no.release.xcconfig"; sourceTree = "<group>"; };
 		E858702E9A0631A3F3D92679 /* Pods-hack4no.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4no.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack4no/Pods-hack4no.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,11 +142,13 @@
 			isa = PBXGroup;
 			children = (
 				C8A3A7151FA368C60099520E /* AppDelegate.swift */,
-				C8A3A7171FA368C60099520E /* ViewController.swift */,
 				C8A3A7191FA368C60099520E /* Main.storyboard */,
 				C8A3A71C1FA368C60099520E /* Assets.xcassets */,
 				C8A3A71E1FA368C60099520E /* LaunchScreen.storyboard */,
 				C8A3A7211FA368C60099520E /* Info.plist */,
+				C8B34CC11FA36B74009B0822 /* RouteMapViewController.swift */,
+				C8B34CC31FA36B8D009B0822 /* NorthernLightsMapViewController.swift */,
+				C8B34CC51FA3B0CE009B0822 /* MapNavigationController.swift */,
 			);
 			path = hack4no;
 			sourceTree = "<group>";
@@ -462,8 +468,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A3A7181FA368C60099520E /* ViewController.swift in Sources */,
 				C8A3A7161FA368C60099520E /* AppDelegate.swift in Sources */,
+				C8B34CC61FA3B0CE009B0822 /* MapNavigationController.swift in Sources */,
+				C8B34CC41FA36B8D009B0822 /* NorthernLightsMapViewController.swift in Sources */,
+				C8B34CC21FA36B74009B0822 /* RouteMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,10 +639,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 57YU2GU732;
+				DEVELOPMENT_TEAM = 846YRX5LVT;
 				INFOPLIST_FILE = hack4no/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hack4no.hack4no;
+				PRODUCT_BUNDLE_IDENTIFIER = hack4no;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -647,10 +655,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 57YU2GU732;
+				DEVELOPMENT_TEAM = 846YRX5LVT;
 				INFOPLIST_FILE = hack4no/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hack4no.hack4no;
+				PRODUCT_BUNDLE_IDENTIFIER = hack4no;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
