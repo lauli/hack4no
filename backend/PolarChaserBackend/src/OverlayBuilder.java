@@ -10,7 +10,7 @@ public class OverlayBuilder {
 	
 	DataRequester dr = new DataRequester();
 
-	public void createImage(int width,int height, LatLonPos ul, LatLonPos lr) {
+	public void createImage(int width,int height, LatLonPos ul, LatLonPos lr,String filename) {
 		
 		
 		BufferedImage off_Image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB_PRE);
@@ -43,11 +43,10 @@ public class OverlayBuilder {
 		try {
 			// retrieve image
 			BufferedImage bi = off_Image;
-			File outputfile = new File("saved.png");
+			File outputfile = new File(filename);
 
 			ImageIO.write(bi, "png", outputfile);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -59,7 +58,7 @@ public class OverlayBuilder {
 		LatLonPos ul = new LatLonPos(66.94f, -23.95f);
 		LatLonPos lr = new LatLonPos(62.595f, -13.45f);
 		
-		ob.createImage(10,10,ul,lr);
+		ob.createImage(10,10,ul,lr,"save");
 	}
 
 }
