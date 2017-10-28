@@ -63,9 +63,11 @@ public class DataRequester {
 
 	public float getAuroraChance(float lat, float lon) {
 		try {
-			if (lastUpdate < System.currentTimeMillis() - 5 * 60 * 1000){ //5 min 
+			if (lastUpdate < System.currentTimeMillis() - 50 * 60 * 1000){ //50 min 
+				System.out.println("getting fresh aurora data");
 				auroraMap = getFreshAuroraData();
 				lastUpdate = System.currentTimeMillis();
+				System.out.println("freshed up aurora data");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -76,10 +78,10 @@ public class DataRequester {
 
 		// clamp lat and lon
 		lat = Float.min(90, Float.max(-90, lat));
-		lon = Float.min(360, Float.max(0, lon));
+		lon = Float.min(180, Float.max(-180, lon));
 
-		int latIndex = (int) (((lat + 90) / 180) * (auroraMap.length-1));
-		int lonIndex = (int) ((lon / 360) * (auroraMap[0].length-1));
+		int latIndex = (int) ((1-((lat + 90) / 180)) * (auroraMap.length-1));
+		int lonIndex = (int) ((1-((lon+180) / 360)) * (auroraMap[0].length-1));
 		
 //		System.out.println(latIndex + ":" + lonIndex);
 
@@ -93,14 +95,10 @@ public class DataRequester {
 	 * http://api.met.no/weatherapi/locationforecast/1.9/documentation#schema
 	 * 
 	 * @param lat
-	 *            dot separated floating point number with two decimal numbers
-	 *            e.g. "10.21"
 	 * @param lon
-	 *            dot separated floating point number with two decimal numbers
-	 *            e.g. "10.21"
 	 * @return
 	 */
-	public Weatherdata getWeatherData(float lat, float lon) {
+	private Weatherdata getWeatherData(float lat, float lon) {
 		String latStr = String.format("%.2f", lat);
 		String lonStr = String.format("%.2f", lon);
 		
@@ -111,15 +109,15 @@ public class DataRequester {
 		Weatherdata data = weatherXmlParser.unmarshall(stream);
 		return data;
 	}
+	
+	public float getCurrentCloudOpacity(LatLonPos pos){
+		return getCurrentCloudOpacity(pos.lat,pos.lon);
+	}
 
 	/**
 	 * 
 	 * @param lat
-	 *            dot separated floating point number with two decimal numbers
-	 *            e.g. "10.21"
 	 * @param lon
-	 *            dot separated floating point number with two decimal numbers
-	 *            e.g. "10.21"
 	 * @return cloud opacity between 0 and 1.
 	 */
 	public float getCurrentCloudOpacity(float lat, float lon) {

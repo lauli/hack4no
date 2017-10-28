@@ -21,11 +21,11 @@ public class DataRequesterTest {
 		//find the lights
 		System.out.println("Searching polar lights");
 		Random rnd = new Random();
-		for (int i = 0; i < 100000; i++){
+		for (int i = 0; i < 10000; i++){
 			int lat = rnd.nextInt(180)-90;
 			int lon = rnd.nextInt(360);
 			float strength = req.getAuroraChance(lat, lon);
-			if (strength > 20)
+			if (strength > 0.1f)
 				System.out.println(lat+":"+lon+": "+ strength);
 		}
 	}
