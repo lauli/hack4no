@@ -58,31 +58,7 @@ class BaseMapController: UIViewController, MKMapViewDelegate, UIGestureRecognize
     }
     
     func getImageFromRestService () {
-        //build request string
-        let serverIP = "192.168.43.145"
-        let leftUpString = "UL/" + String(describing: self.leftupPoint!.latitude) + "/" + String(describing: self.leftupPoint!.longitude) + "/"
-        let rightDownString = "LR/" + String(describing: self.rightdownPoint!.latitude) + "/" + String(describing: self.rightdownPoint!.longitude) + "/"
-        let requestString = ("http://" + serverIP + ":5537/overlay/" + leftUpString + rightDownString + "ratio/3" )
-        print(requestString)
-        
-        Alamofire.request(requestString).responseString { response in
-            print("String:\(String(describing: response.result.value))")
-            switch(response.result) {
-            case .success(_):
-                if let data = response.result.value{
-                    print(data)
-                    if let urlImage = URL(string: "http://" + serverIP + ":5537/" + data) {
-                        self.getImageFromHost(fromURL: urlImage)
-                    }
-                }
-                
-            case .failure(_):
-                print("Error message:\(String(describing: response.result.error))")
-                break
-            }
-        }
-        
-        
+        //implement in child classes
     }
     
  func getImageFromHost (fromURL urlImage: URL) {

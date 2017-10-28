@@ -23,7 +23,7 @@ class SmoothLineChart: BaseChart {
     
     func populateData() {
         self.nextHourTitles         = ["00:00", "02:00", "04:00", "06:00", "08:00", "10:00", "12:00", "14:00"]
-        self.nextHourProbabilities  = ["-2", "0", "1", "5", "8", "9", "11", "12"]
+        self.nextHourProbabilities  = ["-2", "0", "1", "5", "8", "4", "11", "12"]
     }
     
     func barChartSetup() {

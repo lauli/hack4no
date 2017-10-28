@@ -43,12 +43,12 @@ class WeatherStatisticsViewController: UIViewController, GetChartData {
     
     func populateChartData() {
         self.nextHourTitles = ["00:00", "02:00", "04:00", "06:00", "08:00", "10:00", "12:00", "14:00"]
-        self.nextHourProbabilities = ["-2", "0", "1", "5", "8", "9", "11", "12"]
+        self.nextHourProbabilities = ["-2", "0", "1", "5", "8", "4", "11", "12"]
         self.getChartData(with: nextHourTitles, values: nextHourProbabilities)
     }
     
     func lineChart() {
-        let lineChart = SmoothLineChart (frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height:  200))
+        let lineChart = SmoothLineChart (frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height:  400))
         lineChart.delegate = self
         lineChart.backgroundColor = UIColor.clear
         self.lineChartView.addSubview(lineChart)

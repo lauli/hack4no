@@ -31,7 +31,7 @@ class BaseChart: UIView {
         chartview.xAxis.granularityEnabled      = true
         chartview.xAxis.granularity             = 1.0
         
-        chartview.legend.enabled                = true
+        chartview.legend.enabled                = false
         chartview.chartDescription?.enabled     = false
     }
     

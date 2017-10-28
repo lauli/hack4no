@@ -219,7 +219,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZSM-Os-evX">
                                         <rect key="frame" x="10" y="0.0" width="355" height="371"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chances next hour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-Sz-KEL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chances next hour in %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-Sz-KEL">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="F1X-Wx-2g8"/>
@@ -231,7 +231,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dz7-yF-beP">
                                                 <rect key="frame" x="0.0" y="22" width="355" height="206"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAM-Kj-Vav">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction in %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAM-Kj-Vav">
                                                 <rect key="frame" x="0.0" y="228" width="355" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="T9H-wF-Cau"/>
@@ -354,10 +354,10 @@
             </objects>
             <point key="canvasLocation" x="2380" y="542"/>
         </scene>
-        <!--Northern Lights Map View Controller-->
+        <!--Weather Map View Controller-->
         <scene sceneID="KM2-bD-ujK">
             <objects>
-                <viewController id="x4W-6V-NeI" customClass="NorthernLightsMapViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="x4W-6V-NeI" customClass="WeatherMapViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wnb-L5-Avu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,44 +394,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laq-dN-vbC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="goP-dS-XeA">
+                                <rect key="frame" x="10" y="6.5" width="355" height="470.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="goP-dS-XeA">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="143"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxV-xt-vth">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="xqp-5F-oHy"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePL-7d-xv0">
-                                                <rect key="frame" x="0.0" y="35" width="355" height="108"/>
-                                            </view>
-                                        </subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperatures in °C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxV-xt-vth">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePL-7d-xv0">
+                                        <rect key="frame" x="0.0" y="20.5" width="355" height="450"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="143" id="58d-R9-ZQP"/>
+                                            <constraint firstAttribute="height" constant="450" id="jv4-4k-c7p"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="goP-dS-XeA" firstAttribute="centerX" secondItem="laq-dN-vbC" secondAttribute="centerX" id="6tk-YO-9lP"/>
-                                    <constraint firstItem="goP-dS-XeA" firstAttribute="top" secondItem="laq-dN-vbC" secondAttribute="top" id="Kv6-fe-f6r"/>
-                                    <constraint firstItem="goP-dS-XeA" firstAttribute="leading" secondItem="laq-dN-vbC" secondAttribute="leading" constant="10" id="U93-Bt-Dlu"/>
-                                    <constraint firstAttribute="bottom" secondItem="goP-dS-XeA" secondAttribute="bottom" constant="93" id="Vgt-uP-duH"/>
-                                    <constraint firstAttribute="height" constant="484" id="odT-Mi-ld9"/>
-                                    <constraint firstAttribute="trailing" secondItem="goP-dS-XeA" secondAttribute="trailing" constant="10" id="sSy-fB-KWp"/>
+                                    <constraint firstItem="TxV-xt-vth" firstAttribute="centerY" secondItem="goP-dS-XeA" secondAttribute="centerY" constant="-225" id="iH3-bA-Bkt"/>
                                 </constraints>
-                            </scrollView>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="laq-dN-vbC" firstAttribute="centerY" secondItem="hIr-mr-5il" secondAttribute="centerY" id="YtJ-3e-bwm"/>
-                            <constraint firstItem="laq-dN-vbC" firstAttribute="centerX" secondItem="hIr-mr-5il" secondAttribute="centerX" id="nFb-gN-IVd"/>
-                            <constraint firstItem="laq-dN-vbC" firstAttribute="leading" secondItem="hIr-mr-5il" secondAttribute="leading" id="v6a-7M-6aY"/>
+                            <constraint firstItem="goP-dS-XeA" firstAttribute="centerX" secondItem="hIr-mr-5il" secondAttribute="centerX" id="LEl-11-8Tc"/>
+                            <constraint firstItem="goP-dS-XeA" firstAttribute="centerY" secondItem="hIr-mr-5il" secondAttribute="centerY" id="YfW-B5-Osb"/>
+                            <constraint firstItem="goP-dS-XeA" firstAttribute="leading" secondItem="a0S-JX-ei8" secondAttribute="leading" constant="10" id="kfX-KM-m8j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a0S-JX-ei8"/>
                     </view>
@@ -441,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ew6-Gn-a8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="807"/>
+            <point key="canvasLocation" x="3480.8000000000002" y="806.89655172413802"/>
         </scene>
         <!--Magnetfield-->
         <scene sceneID="X3r-Cy-hKW">

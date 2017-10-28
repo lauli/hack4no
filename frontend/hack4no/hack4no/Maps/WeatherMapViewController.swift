@@ -1,25 +1,24 @@
 //
-//  NorthernLightsMapViewController.swift
+//  WeatherMapViewController.swift
 //  hack4no
 //
-//  Created by Laureen Schausberger on 27.10.17.
+//  Created by Laureen Schausberger on 28.10.17.
 //  Copyright © 2017 Laureen Schausberger. All rights reserved.
 //
-
 import UIKit
 import MapKit
 import Alamofire
 
-class NorthernLightsMapViewController: BaseMapController {
-
+class WeatherMapViewController: BaseMapController {
+    
     override func getImageFromRestService () {
         //build request string
         let serverIP = "192.168.43.145"
         let leftUpString = "UL/" + String(describing: self.leftupPoint!.latitude) + "/" + String(describing: self.leftupPoint!.longitude) + "/"
         let rightDownString = "LR/" + String(describing: self.rightdownPoint!.latitude) + "/" + String(describing: self.rightdownPoint!.longitude) + "/"
-        let requestString = ("http://" + serverIP + ":5537/overlay/" + leftUpString + rightDownString + "ratio/3" )
+        let requestString = ("http://" + serverIP + ":5537/overlayC/" + leftUpString + rightDownString + "ratio/3" )
         print(requestString)
-
+        
         Alamofire.request(requestString).responseString { response in
             print("String:\(String(describing: response.result.value))")
             switch(response.result) {
@@ -45,7 +44,7 @@ class NorthernLightsMapViewController: BaseMapController {
         
         //creating a dataTask
         let getImageFromUrl = session.dataTask(with: urlImage) { (data, response, error) in
-
+            
             //if there is any error
             if let e = error {
                 //displaying the message
@@ -75,5 +74,6 @@ class NorthernLightsMapViewController: BaseMapController {
         //starting the download task
         getImageFromUrl.resume()
     }
-
+    
 }
+
