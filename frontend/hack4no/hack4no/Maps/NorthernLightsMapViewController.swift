@@ -27,7 +27,7 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate, UIGe
         centerMapOnLocation(location: initialLocation)
         self.addOverlay()
         self.mapView.delegate = self
-        self.lights.image     = #imageLiteral(resourceName: "test")
+        self.lights.image     = nil
         self.lights.alpha     = 0.2
         self.lights.isUserInteractionEnabled = false
         
@@ -53,15 +53,15 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate, UIGe
     
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius, regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
+                                                                  self.regionRadius, self.regionRadius)
+        self.mapView.setRegion(coordinateRegion, animated: true)
     }
     
     func getImageFromRestService () {
         //build request string
         let serverIP = "192.168.43.145"
-        let leftUpString = "UL/" + String(describing: leftupPoint!.latitude) + "/" + String(describing: leftupPoint!.longitude) + "/"
-        let rightDownString = "LR/" + String(describing: rightdownPoint!.latitude) + "/" + String(describing: rightdownPoint!.longitude) + "/"
+        let leftUpString = "UL/" + String(describing: self.leftupPoint!.latitude) + "/" + String(describing: self.leftupPoint!.longitude) + "/"
+        let rightDownString = "LR/" + String(describing: self.rightdownPoint!.latitude) + "/" + String(describing: self.rightdownPoint!.longitude) + "/"
         let requestString = ("http://" + serverIP + ":5537/overlay/" + leftUpString + rightDownString + "ratio/3" )
         print(requestString)
 
@@ -71,8 +71,9 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate, UIGe
             case .success(_):
                 if let data = response.result.value{
                     print(data)
-                    let urlImage = URL(string: "http://" + serverIP + ":5537/" + data)
-                    self.getImageFromHost(fromURL: urlImage!)
+                    if let urlImage = URL(string: "http://" + serverIP + ":5537/" + data) {
+                        self.getImageFromHost(fromURL: urlImage)
+                    }
                 }
                 
             case .failure(_):
@@ -89,7 +90,7 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate, UIGe
         
         //creating a dataTask
         let getImageFromUrl = session.dataTask(with: urlImage) { (data, response, error) in
-            
+
             //if there is any error
             if let e = error {
                 //displaying the message
@@ -101,13 +102,12 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate, UIGe
                     
                     //checking if the response contains an image
                     if let imageData = data {
-                        
-                        //getting the image
-                        let image = UIImage(data: imageData)
-                        
-                        //displaying the image
-                        self.setImage(image!)
-                        
+                        if let image = UIImage(data: imageData) {
+                            //displaying the image
+                            DispatchQueue.main.async() {
+                                self.setImage(image)
+                            }
+                        }
                     } else {
                         print("Image file is corrupted")
                     }
@@ -132,12 +132,6 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate, UIGe
         
         self.leftupPoint = CLLocationCoordinate2D(latitude: center.latitude + latitude, longitude: center.longitude - longitude)
         self.rightdownPoint = CLLocationCoordinate2D(latitude: center.latitude - latitude, longitude: center.longitude + longitude)
-        
-        let anno = MKPointAnnotation()
-        anno.coordinate = leftupPoint!
-        let anno2 = MKPointAnnotation()
-        anno2.coordinate = rightdownPoint!
-        self.mapView.addAnnotations([anno, anno2])
         
         let circle = MKCircle(center: CLLocationCoordinate2D(latitude: 70.067581, longitude: 19.249916), radius: 1000)
         self.mapView.add(circle)

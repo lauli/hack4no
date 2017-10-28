@@ -386,10 +386,10 @@
             </objects>
             <point key="canvasLocation" x="3481" y="277"/>
         </scene>
-        <!--Magnetfield Statstics View Controller-->
+        <!--Weather Statistics View Controller-->
         <scene sceneID="3DT-Ul-iNy">
             <objects>
-                <viewController id="ht1-8g-PY9" customClass="MagnetfieldStatsticsViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ht1-8g-PY9" customClass="WeatherStatisticsViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hIr-mr-5il">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,22 +398,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="goP-dS-XeA">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="371"/>
+                                        <rect key="frame" x="10" y="0.0" width="355" height="143"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chances next hour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Go-vn-Kak">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="vwS-sn-Tgt"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qr7-lq-Wm9">
-                                                <rect key="frame" x="0.0" y="22" width="355" height="206"/>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxV-xt-vth">
-                                                <rect key="frame" x="0.0" y="228" width="355" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="xqp-5F-oHy"/>
                                                 </constraints>
@@ -422,14 +410,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePL-7d-xv0">
-                                                <rect key="frame" x="0.0" y="263" width="355" height="108"/>
+                                                <rect key="frame" x="0.0" y="35" width="355" height="108"/>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Qr7-lq-Wm9" firstAttribute="centerY" secondItem="goP-dS-XeA" secondAttribute="centerY" constant="-60.5" id="PQZ-cE-5dG"/>
-                                            <constraint firstItem="TxV-xt-vth" firstAttribute="centerY" secondItem="goP-dS-XeA" secondAttribute="centerY" constant="60" id="XIb-wf-NgC"/>
-                                            <constraint firstItem="Qr7-lq-Wm9" firstAttribute="top" secondItem="8Go-vn-Kak" secondAttribute="bottom" id="fKF-T9-l5C"/>
-                                            <constraint firstItem="8Go-vn-Kak" firstAttribute="top" secondItem="goP-dS-XeA" secondAttribute="top" id="lYS-Nn-OdC"/>
+                                            <constraint firstAttribute="height" constant="143" id="58d-R9-ZQP"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -451,7 +436,6 @@
                         <viewLayoutGuide key="safeArea" id="a0S-JX-ei8"/>
                     </view>
                     <connections>
-                        <outlet property="barChartView" destination="Qr7-lq-Wm9" id="rfa-ZS-dTa"/>
                         <outlet property="lineChartView" destination="ePL-7d-xv0" id="QnP-mL-yWh"/>
                     </connections>
                 </viewController>

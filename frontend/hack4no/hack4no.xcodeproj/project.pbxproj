@@ -26,6 +26,8 @@
 		C8B34CC61FA3B0CE009B0822 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC51FA3B0CE009B0822 /* MapViewController.swift */; };
 		C8C70C6A1FA3C888007E427A /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C70C691FA3C888007E427A /* BarChart.swift */; };
 		C8C70C6C1FA3FC56007E427A /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C70C6B1FA3FC56007E427A /* LineChart.swift */; };
+		C8D9B91A1FA4952000288F1E /* WeatherStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D9B9191FA4952000288F1E /* WeatherStatisticsViewController.swift */; };
+		C8D9B91C1FA4973500288F1E /* SmoothLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D9B91B1FA4973500288F1E /* SmoothLineChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		C8B34CC51FA3B0CE009B0822 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C8C70C691FA3C888007E427A /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		C8C70C6B1FA3FC56007E427A /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		C8D9B9191FA4952000288F1E /* WeatherStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatisticsViewController.swift; sourceTree = "<group>"; };
+		C8D9B91B1FA4973500288F1E /* SmoothLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothLineChart.swift; sourceTree = "<group>"; };
 		CB3AB038A679094B3D868576 /* Pods-hack4noUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4noUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack4noUITests/Pods-hack4noUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4DF2C80C729012B8D3C8A48 /* Pods-hack4no.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4no.release.xcconfig"; path = "Pods/Target Support Files/Pods-hack4no/Pods-hack4no.release.xcconfig"; sourceTree = "<group>"; };
 		E858702E9A0631A3F3D92679 /* Pods-hack4no.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4no.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack4no/Pods-hack4no.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				C8C70C691FA3C888007E427A /* BarChart.swift */,
 				C8C70C6B1FA3FC56007E427A /* LineChart.swift */,
 				C83C9E011FA41F0400BC6CBC /* BaseChart.swift */,
+				C8D9B91B1FA4973500288F1E /* SmoothLineChart.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			children = (
 				C8887D2D1FA3BA2000487896 /* MagnetfieldStatsticsViewController.swift */,
 				C83C9E031FA46AAA00BC6CBC /* LightPollutionStatisticsViewController.swift */,
+				C8D9B9191FA4952000288F1E /* WeatherStatisticsViewController.swift */,
 				C83C9DFE1FA417BA00BC6CBC /* Charts */,
 			);
 			path = Statistics;
@@ -534,7 +540,9 @@
 				C83C9E001FA41DF700BC6CBC /* BaseViewController.swift in Sources */,
 				C8C70C6C1FA3FC56007E427A /* LineChart.swift in Sources */,
 				C8C70C6A1FA3C888007E427A /* BarChart.swift in Sources */,
+				C8D9B91C1FA4973500288F1E /* SmoothLineChart.swift in Sources */,
 				C8B34CC21FA36B74009B0822 /* RouteMapViewController.swift in Sources */,
+				C8D9B91A1FA4952000288F1E /* WeatherStatisticsViewController.swift in Sources */,
 				C83C9E021FA41F0400BC6CBC /* BaseChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
