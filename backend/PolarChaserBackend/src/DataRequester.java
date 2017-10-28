@@ -46,6 +46,7 @@ public class DataRequester {
 
 	private int[][] getFreshAuroraData() throws IOException {
 		String url = "http://services.swpc.noaa.gov/text/aurora-nowcast-map.txt";
+		//String url = "https://raw.githubusercontent.com/lauli/hack4no/master/backend/PolarChaserBackend/aurora-nowcast-map.txt";
 		InputStream stream = getStreamFromUrl(url);
 		BufferedReader rd = new BufferedReader(new InputStreamReader(stream));
 
