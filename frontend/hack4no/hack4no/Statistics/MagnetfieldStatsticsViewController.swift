@@ -22,10 +22,14 @@ class MagnetfieldStatsticsViewController: UIViewController, GetChartData {
     var nextHourTitles = [String]()
     var nextHourProbabilities = [String]()
     
+    @IBOutlet weak var barChartView: UIView!
+    @IBOutlet weak var lineChartView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.populateChartData()
         self.barChart()
+        self.lineChart()
     }
     
     func populateChartData() {
@@ -35,9 +39,17 @@ class MagnetfieldStatsticsViewController: UIViewController, GetChartData {
     }
     
     func barChart() {
-        let barChart = BarChart (frame: CGRect(x: 0, y: 100, width: self.view.frame.width, height:  300))
+        let barChart = BarChart (frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height:  200))
         barChart.delegate = self
-        self.view.addSubview(barChart)
+        barChart.backgroundColor = UIColor.clear
+        self.barChartView.addSubview(barChart)
+    }
+    
+    func lineChart() {
+        let lineChart = LineChart (frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height:  200))
+        lineChart.delegate = self
+        lineChart.backgroundColor = UIColor.clear
+        self.lineChartView.addSubview(lineChart)
     }
     
     func getChartData(with dataPoints: [String], values: [String]) {

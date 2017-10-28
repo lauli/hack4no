@@ -100,6 +100,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statistics_background" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-HS-HGO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Owe-gx-p99" userLabel="mapview">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -108,14 +112,14 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AG0-B0-MJj" userLabel="statisticsview">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="484"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="YzQ-tf-4h9" kind="embed" id="cEH-TY-bby"/>
                                 </connections>
                             </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-9P-AdH" userLabel="switch">
-                                <rect key="frame" x="114" y="85" width="147" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y4j-9P-AdH" userLabel="switch">
+                                <rect key="frame" x="16" y="85" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Map View"/>
@@ -178,18 +182,62 @@
             <objects>
                 <viewController id="YzQ-tf-4h9" customClass="MagnetfieldStatsticsViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nbe-eJ-3uh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZSM-Os-evX">
+                                <rect key="frame" x="10" y="0.0" width="355" height="381"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chances next hour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-Sz-KEL">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dz7-yF-beP">
+                                        <rect key="frame" x="0.0" y="27" width="355" height="206"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming chances" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAM-Kj-Vav">
+                                        <rect key="frame" x="0.0" y="233" width="355" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="T9H-wF-Cau"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPe-ev-wQG">
+                                        <rect key="frame" x="0.0" y="268" width="355" height="113"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WiR-Sz-KEL" firstAttribute="top" secondItem="ZSM-Os-evX" secondAttribute="top" id="0Ln-Th-Jvi"/>
+                                    <constraint firstItem="dz7-yF-beP" firstAttribute="top" secondItem="WiR-Sz-KEL" secondAttribute="bottom" id="BV4-jG-k0H"/>
+                                    <constraint firstItem="UAM-Kj-Vav" firstAttribute="centerY" secondItem="ZSM-Os-evX" secondAttribute="centerY" constant="60" id="Qnc-YG-PA6"/>
+                                    <constraint firstItem="dz7-yF-beP" firstAttribute="centerY" secondItem="ZSM-Os-evX" secondAttribute="centerY" constant="-60.5" id="hbW-kX-g8b"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8F2-kN-2iA" firstAttribute="bottom" secondItem="ZSM-Os-evX" secondAttribute="bottom" constant="103" id="S40-Mr-78T"/>
+                            <constraint firstAttribute="trailing" secondItem="ZSM-Os-evX" secondAttribute="trailing" constant="10" id="XaP-1Q-8uj"/>
+                            <constraint firstItem="ZSM-Os-evX" firstAttribute="leading" secondItem="8F2-kN-2iA" secondAttribute="leading" constant="10" id="eNH-Rd-iem"/>
+                            <constraint firstItem="ZSM-Os-evX" firstAttribute="top" secondItem="Nbe-eJ-3uh" secondAttribute="top" id="wCq-VN-nKv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8F2-kN-2iA"/>
                     </view>
+                    <connections>
+                        <outlet property="barChartView" destination="dz7-yF-beP" id="VFh-Yv-NYY"/>
+                        <outlet property="lineChartView" destination="hPe-ev-wQG" id="7bV-9Z-obP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6T-Gs-azt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3174" y="-721"/>
+            <point key="canvasLocation" x="3173.5999999999999" y="-721.43928035982015"/>
         </scene>
     </scenes>
     <resources>
+        <image name="statistics_background" width="375" height="667"/>
         <image name="test" width="50" height="100"/>
     </resources>
 </document>

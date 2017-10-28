@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate {
+class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var lights: UIImageView!
@@ -22,9 +22,21 @@ class NorthernLightsMapViewController: UIViewController, MKMapViewDelegate {
         self.lights.alpha = 0.2
         self.lights.isUserInteractionEnabled = false
         
-        // Do any additional setup after loading the view.
+        let mapDragRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.didDragMap(gestureRecognizer:)))
+        mapDragRecognizer.delegate = self
+        self.mapView.addGestureRecognizer(mapDragRecognizer)
     }
 
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    @objc func didDragMap(gestureRecognizer: UIGestureRecognizer) {
+        if (gestureRecognizer.state == UIGestureRecognizerState.ended) {
+            print("Map drag ended, make call to REST-Server")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
