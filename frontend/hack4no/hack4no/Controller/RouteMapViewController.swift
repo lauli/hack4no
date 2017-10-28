@@ -11,9 +11,9 @@ import MapKit
 
 class RouteMapViewController: BaseViewController, MKMapViewDelegate {
     // tromso   69.653333, 18.958087
-    // hill     70.067581, 19.249916
+    // hill     69.853258, 18.820932
     let sourceLocation      = CLLocationCoordinate2D(latitude: 69.653333, longitude: 18.958087)
-    let destinationLocation = CLLocationCoordinate2D(latitude: 70.067581, longitude: 19.249916)
+    let destinationLocation = CLLocationCoordinate2D(latitude: 69.853258, longitude: 18.820932)
     
     @IBOutlet weak var mapView: MKMapView!
     
