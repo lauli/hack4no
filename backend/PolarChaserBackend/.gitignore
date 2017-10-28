@@ -1,7 +1,7 @@
 # =============== #
 # Project         #
 # =============== #
-
+resources/public/overlay
 data
 *.lnk
 
@@ -60,3 +60,4 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+/target/
