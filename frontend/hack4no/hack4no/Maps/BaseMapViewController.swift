@@ -18,9 +18,9 @@ class BaseMapController: UIViewController, MKMapViewDelegate, UIGestureRecognize
     var leftupPoint: CLLocationCoordinate2D?
     var rightdownPoint: CLLocationCoordinate2D?
     
-    // set initial location in Oslo
-    let initialLocation = CLLocation (latitude: 60.1529576, longitude: 10.2620129)
-    let regionRadius: CLLocationDistance = 20000
+    // set initial location in tromso 69.647570, 18.956201
+    var initialLocation                     = CLLocation (latitude: 69.647570, longitude: 18.956201)
+    var regionRadius: CLLocationDistance    = 200000
     
     override func viewDidLoad() {
         super.viewDidLoad()

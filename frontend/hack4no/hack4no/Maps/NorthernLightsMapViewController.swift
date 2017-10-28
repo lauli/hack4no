@@ -12,6 +12,24 @@ import Alamofire
 
 class NorthernLightsMapViewController: BaseMapController {
 
+    
+    override func viewDidLoad() {
+        self.initialLocation = CLLocation (latitude: 56.723479, longitude: -111.380193)
+        self.regionRadius       = 200000
+        self.centerMapOnLocation(location: initialLocation)
+        
+        self.addOverlay()
+        self.mapView.delegate = self
+        self.lights.image     = nil
+        self.lights.alpha     = 0.5
+        self.lights.isUserInteractionEnabled = false
+        
+        let mapDragRecognizer      = UIPanGestureRecognizer(target: self, action: #selector(self.didDragMap(gestureRecognizer:)))
+        mapDragRecognizer.delegate = self
+        self.mapView.addGestureRecognizer(mapDragRecognizer)
+        self.getImageFromRestService()
+    }
+    
     override func getImageFromRestService () {
         //build request string
         let serverIP = "192.168.43.145"

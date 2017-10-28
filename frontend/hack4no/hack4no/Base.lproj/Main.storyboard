@@ -506,10 +506,10 @@
             </objects>
             <point key="canvasLocation" x="2380" y="1697"/>
         </scene>
-        <!--Northern Lights Map View Controller-->
+        <!--Light Pollution Map View Controller-->
         <scene sceneID="bcv-4n-hgZ">
             <objects>
-                <viewController id="HTw-6a-fcx" customClass="NorthernLightsMapViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HTw-6a-fcx" customClass="LightPollutionMapViewController" customModule="hack4no" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GmB-YP-1Fj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -519,7 +519,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="gBB-gf-peO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="119" y="221" width="256" height="333"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -536,7 +536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAu-en-s3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="1431"/>
+            <point key="canvasLocation" x="3480.8000000000002" y="1430.2848575712146"/>
         </scene>
         <!--Light Pollution Statistics View Controller-->
         <scene sceneID="Aip-eI-MzV">
