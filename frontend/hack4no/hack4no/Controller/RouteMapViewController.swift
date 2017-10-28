@@ -9,40 +9,43 @@
 import UIKit
 import MapKit
 
-class RouteMapViewController: UIViewController, MKMapViewDelegate {
+class RouteMapViewController: BaseViewController, MKMapViewDelegate {
     // tromso   69.653333, 18.958087
     // hill     70.067581, 19.249916
-    let sourceLocation = CLLocationCoordinate2D(latitude: 69.653333, longitude: 18.958087)
+    let sourceLocation      = CLLocationCoordinate2D(latitude: 69.653333, longitude: 18.958087)
     let destinationLocation = CLLocationCoordinate2D(latitude: 70.067581, longitude: 19.249916)
     
     @IBOutlet weak var mapView: MKMapView!
-  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.renderRoute()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.renderRoute()
+    }
+   
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     func renderRoute() {
-        
         // TROMSO
-        let sourcePlacemark = MKPlacemark(coordinate: self.sourceLocation, addressDictionary: nil)
-        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
-        let sourceAnnotation = MKPointAnnotation()
-        sourceAnnotation.title = "You are here"
+        let sourcePlacemark     = MKPlacemark(coordinate: self.sourceLocation, addressDictionary: nil)
+        let sourceMapItem       = MKMapItem(placemark: sourcePlacemark)
+        let sourceAnnotation    = MKPointAnnotation()
+        sourceAnnotation.title  = "You are here"
         
         if let location = sourcePlacemark.location {
             sourceAnnotation.coordinate = location.coordinate
         }
         
         // HILL
-        let destinationPlacemark = MKPlacemark(coordinate: self.destinationLocation, addressDictionary: nil)
-        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
-        let destinationAnnotation = MKPointAnnotation()
+        let destinationPlacemark    = MKPlacemark(coordinate: self.destinationLocation, addressDictionary: nil)
+        let destinationMapItem      = MKMapItem(placemark: destinationPlacemark)
+        let destinationAnnotation   = MKPointAnnotation()
         destinationAnnotation.title = "Recommendation"
         
         if let location = destinationPlacemark.location {
@@ -51,14 +54,13 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         
         self.mapView.showAnnotations([sourceAnnotation,destinationAnnotation], animated: true )
         
-        let directionRequest = MKDirectionsRequest()
-        directionRequest.source = sourceMapItem
-        directionRequest.destination = destinationMapItem
-        directionRequest.transportType = .walking
+        let directionRequest            = MKDirectionsRequest()
+        directionRequest.source         = sourceMapItem
+        directionRequest.destination    = destinationMapItem
+        directionRequest.transportType  = .walking
         
         // Calculate the direction
         let directions = MKDirections(request: directionRequest)
-        
         directions.calculate {
             (response, error) -> Void in
             
@@ -66,7 +68,6 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
                 if let error = error {
                     print("Error: \(error)")
                 }
-                
                 return
             }
             
@@ -78,11 +79,6 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.red
@@ -90,15 +86,4 @@ class RouteMapViewController: UIViewController, MKMapViewDelegate {
         
         return renderer
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -10,6 +10,10 @@
 		2AC123E6F279E48F4038A669 /* Pods_hack4noTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5966272F3B77A71B7D02320D /* Pods_hack4noTests.framework */; };
 		33E530B7F3DD3ED84878BF61 /* Pods_hack4no.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8D681976A854E2DA76ACBD /* Pods_hack4no.framework */; };
 		50707129A3C25517008EA58C /* Pods_hack4noUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813599743E7D22D8EC8DA0FA /* Pods_hack4noUITests.framework */; };
+		C83C9DFC1FA416A900BC6CBC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C9DFB1FA416A900BC6CBC /* Extensions.swift */; };
+		C83C9E001FA41DF700BC6CBC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C9DFF1FA41DF700BC6CBC /* BaseViewController.swift */; };
+		C83C9E021FA41F0400BC6CBC /* BaseChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C9E011FA41F0400BC6CBC /* BaseChart.swift */; };
+		C83C9E041FA46AAA00BC6CBC /* LightPollutionStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C9E031FA46AAA00BC6CBC /* LightPollutionStatisticsViewController.swift */; };
 		C8887D2E1FA3BA2000487896 /* MagnetfieldStatsticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8887D2D1FA3BA2000487896 /* MagnetfieldStatsticsViewController.swift */; };
 		C8A3A7161FA368C60099520E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3A7151FA368C60099520E /* AppDelegate.swift */; };
 		C8A3A71B1FA368C60099520E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3A7191FA368C60099520E /* Main.storyboard */; };
@@ -19,7 +23,7 @@
 		C8A3A7361FA368C60099520E /* hack4noUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3A7351FA368C60099520E /* hack4noUITests.swift */; };
 		C8B34CC21FA36B74009B0822 /* RouteMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC11FA36B74009B0822 /* RouteMapViewController.swift */; };
 		C8B34CC41FA36B8D009B0822 /* NorthernLightsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC31FA36B8D009B0822 /* NorthernLightsMapViewController.swift */; };
-		C8B34CC61FA3B0CE009B0822 /* MapNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC51FA3B0CE009B0822 /* MapNavigationController.swift */; };
+		C8B34CC61FA3B0CE009B0822 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B34CC51FA3B0CE009B0822 /* MapViewController.swift */; };
 		C8C70C6A1FA3C888007E427A /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C70C691FA3C888007E427A /* BarChart.swift */; };
 		C8C70C6C1FA3FC56007E427A /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C70C6B1FA3FC56007E427A /* LineChart.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +51,10 @@
 		5966272F3B77A71B7D02320D /* Pods_hack4noTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hack4noTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		754596EC35CDC6652530BE19 /* Pods-hack4noUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4noUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hack4noUITests/Pods-hack4noUITests.release.xcconfig"; sourceTree = "<group>"; };
 		813599743E7D22D8EC8DA0FA /* Pods_hack4noUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hack4noUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83C9DFB1FA416A900BC6CBC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C83C9DFF1FA41DF700BC6CBC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C83C9E011FA41F0400BC6CBC /* BaseChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseChart.swift; sourceTree = "<group>"; };
+		C83C9E031FA46AAA00BC6CBC /* LightPollutionStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightPollutionStatisticsViewController.swift; sourceTree = "<group>"; };
 		C8887D2D1FA3BA2000487896 /* MagnetfieldStatsticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetfieldStatsticsViewController.swift; sourceTree = "<group>"; };
 		C8A3A7121FA368C60099520E /* hack4no.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hack4no.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A3A7151FA368C60099520E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +70,7 @@
 		C8A3A7371FA368C60099520E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8B34CC11FA36B74009B0822 /* RouteMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapViewController.swift; sourceTree = "<group>"; };
 		C8B34CC31FA36B8D009B0822 /* NorthernLightsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorthernLightsMapViewController.swift; sourceTree = "<group>"; };
-		C8B34CC51FA3B0CE009B0822 /* MapNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationController.swift; sourceTree = "<group>"; };
+		C8B34CC51FA3B0CE009B0822 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C8C70C691FA3C888007E427A /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		C8C70C6B1FA3FC56007E427A /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		CB3AB038A679094B3D868576 /* Pods-hack4noUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hack4noUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hack4noUITests/Pods-hack4noUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,12 +130,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C83C9DFA1FA4168A00BC6CBC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C8B34CC11FA36B74009B0822 /* RouteMapViewController.swift */,
+				C8B34CC51FA3B0CE009B0822 /* MapViewController.swift */,
+				C83C9DFF1FA41DF700BC6CBC /* BaseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C83C9DFD1FA4175500BC6CBC /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				C8B34CC31FA36B8D009B0822 /* NorthernLightsMapViewController.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		C83C9DFE1FA417BA00BC6CBC /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				C8C70C691FA3C888007E427A /* BarChart.swift */,
+				C8C70C6B1FA3FC56007E427A /* LineChart.swift */,
+				C83C9E011FA41F0400BC6CBC /* BaseChart.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		C8887D2C1FA3B9F100487896 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
 				C8887D2D1FA3BA2000487896 /* MagnetfieldStatsticsViewController.swift */,
-				C8C70C691FA3C888007E427A /* BarChart.swift */,
-				C8C70C6B1FA3FC56007E427A /* LineChart.swift */,
+				C83C9E031FA46AAA00BC6CBC /* LightPollutionStatisticsViewController.swift */,
+				C83C9DFE1FA417BA00BC6CBC /* Charts */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -157,15 +193,15 @@
 		C8A3A7141FA368C60099520E /* hack4no */ = {
 			isa = PBXGroup;
 			children = (
+				C83C9DFA1FA4168A00BC6CBC /* Controller */,
+				C83C9DFD1FA4175500BC6CBC /* Maps */,
 				C8887D2C1FA3B9F100487896 /* Statistics */,
 				C8A3A7151FA368C60099520E /* AppDelegate.swift */,
 				C8A3A7191FA368C60099520E /* Main.storyboard */,
 				C8A3A71C1FA368C60099520E /* Assets.xcassets */,
 				C8A3A71E1FA368C60099520E /* LaunchScreen.storyboard */,
 				C8A3A7211FA368C60099520E /* Info.plist */,
-				C8B34CC11FA36B74009B0822 /* RouteMapViewController.swift */,
-				C8B34CC31FA36B8D009B0822 /* NorthernLightsMapViewController.swift */,
-				C8B34CC51FA3B0CE009B0822 /* MapNavigationController.swift */,
+				C83C9DFB1FA416A900BC6CBC /* Extensions.swift */,
 			);
 			path = hack4no;
 			sourceTree = "<group>";
@@ -491,11 +527,15 @@
 			files = (
 				C8887D2E1FA3BA2000487896 /* MagnetfieldStatsticsViewController.swift in Sources */,
 				C8A3A7161FA368C60099520E /* AppDelegate.swift in Sources */,
-				C8B34CC61FA3B0CE009B0822 /* MapNavigationController.swift in Sources */,
+				C83C9E041FA46AAA00BC6CBC /* LightPollutionStatisticsViewController.swift in Sources */,
+				C8B34CC61FA3B0CE009B0822 /* MapViewController.swift in Sources */,
+				C83C9DFC1FA416A900BC6CBC /* Extensions.swift in Sources */,
 				C8B34CC41FA36B8D009B0822 /* NorthernLightsMapViewController.swift in Sources */,
+				C83C9E001FA41DF700BC6CBC /* BaseViewController.swift in Sources */,
 				C8C70C6C1FA3FC56007E427A /* LineChart.swift in Sources */,
 				C8C70C6A1FA3C888007E427A /* BarChart.swift in Sources */,
 				C8B34CC21FA36B74009B0822 /* RouteMapViewController.swift in Sources */,
+				C83C9E021FA41F0400BC6CBC /* BaseChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

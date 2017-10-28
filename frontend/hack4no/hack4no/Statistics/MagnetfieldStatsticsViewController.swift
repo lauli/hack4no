@@ -39,7 +39,7 @@ class MagnetfieldStatsticsViewController: UIViewController, GetChartData {
     }
     
     func barChart() {
-        let barChart = BarChart (frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height:  200))
+        let barChart = BarChart (frame: CGRect(x: 0, y: 8, width: self.view.frame.width-20, height:  180))
         barChart.delegate = self
         barChart.backgroundColor = UIColor.clear
         self.barChartView.addSubview(barChart)
@@ -56,8 +56,6 @@ class MagnetfieldStatsticsViewController: UIViewController, GetChartData {
         self.nextHourTitles = dataPoints
         self.nextHourProbabilities = values
     }
-    
-    
     
 }
 

@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
-class MapNavigationController: UIViewController {
+class MapViewController: BaseViewController {
     
     @IBOutlet weak var mapview: UIView!
     @IBOutlet weak var statisticsview: UIView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.hide(map: false, statistics: true)
     }
     
